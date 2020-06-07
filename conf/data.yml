@@ -1,0 +1,66 @@
+Assessment(a1):
+  weight: 123.3
+  chest: 45.0
+  thigh: 12.5
+  upperArm: 23.3
+  waist: 32.0
+  hips: 38.0
+
+Assessment(a2):
+  weight: 123.3
+  chest: 45.0
+  thigh: 12.0
+  upperArm: 23.3
+  waist: 31.0
+  hips: 36.0
+
+Assessment(a3):
+  weight: 77
+  chest: 38.0
+  thigh: 20.5
+  upperArm: 13.3
+  waist: 29.0
+  hips: 34.0
+
+Assessment(a4):
+  weight: 77
+  chest: 38.0
+  thigh: 20.5
+  upperArm: 13.3
+  waist: 29.0
+  hips: 34.0
+
+Member(m1):
+  name: Homer Simpson
+  address: 742 Evergreen Terrace
+  email: homer@Compu-Global-Hyper-Mega-Net.com
+  password: duffndoughnuts
+  gender: male
+  height: 177
+  weight: 130
+  assessments:
+    - a1
+    - a2
+
+Member(m2):
+  name: Ned Flanders
+  address: 741 Evergreen Terrace
+  email: oogleygoogley@gmail.com
+  password: rodntod
+  gender: male
+  height: 180
+  weight: 67
+  assessments:
+    - a3
+    - a4
+
+Trainer(t1):
+  name: Gavin Soady
+  address: 741 Evergreen Terrace
+  email: gs@gmail.com
+  password: nopainnogain
+  gender: male
+  height: 180
+  weight: 88
+
+

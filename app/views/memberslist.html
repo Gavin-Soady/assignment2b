@@ -1,0 +1,21 @@
+#{extends 'main.html' /}
+#{set title:'Member List' /}
+
+#{memberlistmenu id:"memberslist"/}
+<section class="ui segment ">
+
+    <h1>Members List</h1>
+
+    #{list items:members, as:'member'}
+    <a href="/showmember/${member.id}" class="ui left aligned middle aligned grid segment">
+    <section class="ui segment sixteen wide column">
+        <h2 class="ui header blue">
+            ${member.name}
+        </h2>
+        <h3 class="ui header">
+            ${member.assessments.size()} Assessments
+        </h3>
+    </section>
+    </a>
+    #{/list}
+</section>

@@ -1,0 +1,116 @@
+#{extends 'main.html' /}
+#{set title:'TrainerDashboard' /}
+
+#{trainermenu id:"trainerdashboard"/}
+<section class="ui raised segment">
+    <div class="ui center aligned middle aligned grid segment">
+        <div class="four wide column">
+        <i class="ui user icon huge"></i>
+        <p class = "top-text">
+          <span class="ui large text">
+            ${member.name}
+          </span>
+        </p>
+    </div>
+        <div class="four wide column">
+            <i class="${isIdealWeightColor}"></i>
+            <p class = "top-text">
+          <span class="ui large text">
+            ${isIdealWeight}
+          </span>
+            </p>
+        </div>
+        <div class="four wide column">
+            <div class="ui middle aligned  grid ">
+                <div class="three wide column">
+                    <i class="ui huge heartbeat icon right "></i>
+                </div>
+                <div class="four wide column">
+                    <p ui top-text  segment><span class="ui huge text left-text ">${bmiString}</span></p>
+                </div>
+            </div>
+            <p class="ui "><span class="ui large text ">BMI</span></p>
+        </div>
+        <div class="four wide column">
+            <i class="ui user md icon huge"></i>
+            <p class = "top-text">
+          <span class="ui large text">
+            ${bmiCategory}
+          </span>
+            </p>
+        </div>
+    </div>
+    <form class="ui segment form" action="/trainerdashboard/addassessment/${member.id}" method="POST">
+        <h1> Add new Assessment</h1>
+        <div class="three fields">
+            <div class="field">
+                <label>Weight</label>
+                <input placeholder="00.00kg" type="number" name="weight">
+            </div>
+            <div class="field">
+                <label>Chest</label>
+                <input placeholder="00.00cm" type="number" name="chest">
+            </div>
+            <div class="field">
+                <label>Thigh</label>
+                <input placeholder="00.00cm" type="number" name="thigh">
+            </div>
+        </div>
+        <div class="three fields">
+            <div class="field">
+                <label>Upper Arm</label>
+                <input placeholder="00.00cm" type="number" name="upperArm">
+            </div>
+            <div class="field">
+                <label>Waist</label>
+                <input placeholder="00.00cm" type="number" name="waist">
+            </div>
+            <div class="field">
+                <label>Hips</label>
+                <input placeholder="00.00cm" type="number" name="hips">
+            </div>
+
+        </div>
+        <button class="ui blue submit button">Add Assessment</button>
+    </form>
+    <section class = "ui segment">
+        <h1> Previous Assessments</h1>
+    #{list items:assessments, as:'assessments'}
+    <table class="ui celled table">
+        <thead>
+        <tr>
+            <th>Weight</th>
+            <th>Chest</th>
+            <th>Thigh</th>
+            <th>Upper Arm</th>
+            <th>Waist</th>
+            <th>Hips</th>
+            <th>Comment</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td> ${assessments.weight} </td>
+                <td> ${assessments.chest} </td>
+                <td> ${assessments.thigh} </td>
+                <td> ${assessments.upperArm} </td>
+                <td> ${assessments.waist} </td>
+                <td> ${assessments.hips} </td>
+                <td> ${assessments.comment} </td>
+            </tr>
+            <tr>
+                <td colspan="7">
+                    <form class="ui form" action="/assessment/${member.id}/addcomment/${assessments.id}" method="POST">
+                        <div class="field focus small">
+                            <label>Comment</label>
+                            <textarea rows="2" placeholder="Please enter comment" type="text" name="comment"></textarea>
+                        </div>
+                        <button class="ui blue submit button">Update</button>
+                    </form>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    #{/list}
+    </section>
+</section>

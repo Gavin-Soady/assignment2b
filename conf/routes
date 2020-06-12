@@ -8,7 +8,7 @@ GET     /dashboard                                  Dashboard.index
 POST    /membercontroller/addassessment             MemberController.addAssessment
 POST    /trainerlogin                               Login.checkTrainerLogin
 POST    /login                                      Login.checkLogin
-POST    /signup                                     Signup.addMemberpla
+POST    /signup                                     Signup.addMember
 GET     /admin                                      Admin.index
 GET     /about                                      About.index
 GET     /signup                                     Signup.index
